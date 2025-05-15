@@ -1,0 +1,417 @@
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clinic Website with Separate Data Table Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body
+  class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500"
+>
+  
+  <nav
+    class="flex items-center justify-between p-6 max-w-7xl mx-auto sticky top-0 bg-white dark:bg-gray-900 z-50 shadow-md"
+  >
+    <a
+      class="text-2xl font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition cursor-pointer"
+      id="navHome"
+      >ClinicCare</a
+    >
+    <ul
+      class="flex space-x-8 font-semibold text-gray-700 dark:text-gray-300"
+      id="navLinks"
+    >
+      <li>
+        <a
+          class="hover:text-blue-600 dark:hover:text-blue-400 transition cursor-pointer"
+          id="navHomeLink"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          class="hover:text-blue-600 dark:hover:text-blue-400 transition cursor-pointer"
+          id="navAboutLink"
+          >About</a
+        >
+      </li>
+      <li>
+        <a
+          class="hover:text-blue-600 dark:hover:text-blue-400 transition cursor-pointer"
+          id="navContactLink"
+          >Contact</a
+        >
+      </li>
+      <li>
+        <a
+          class="hover:text-blue-600 dark:hover:text-blue-400 transition cursor-pointer"
+          id="navTableLink"
+          >Data Table</a
+        >
+      </li>
+    </ul>
+    <div class="flex items-center space-x-4">
+      <button
+        id="loginBtn"
+        class="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 dark:hover:bg-blue-500 transition pulse"
+        aria-label="Open Login Modal"
+      >
+        Login
+      </button>
+      <button
+        id="darkModeToggle"
+        aria-label="Toggle Dark Mode"
+        class="text-gray-700 dark:text-gray-300 focus:outline-none text-xl"
+      >
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </nav>
+
+  
+  <main class="max-w-7xl mx-auto p-6 min-h-[80vh] relative overflow-hidden">
+    
+    <section
+      id="pageHome"
+      class="page active"
+      aria-label="Home Page"
+      tabindex="-1"
+    >
+      <section
+        class="flex flex-col md:flex-row items-center px-6 py-16 gap-10"
+        id="homeContent"
+      >
+        <div class="md:w-1/2 space-y-6">
+          <h1 class="text-5xl font-extrabold leading-tight">
+            Your Health,
+            <span class="text-blue-600 dark:text-blue-400">Our Priority</span>
+          </h1>
+          <p class="text-lg text-gray-700 dark:text-gray-300">
+            At ClinicCare, we provide compassionate and comprehensive healthcare
+            services to keep you and your family healthy.
+          </p>
+          <button
+            id="btnBookAppointment"
+            class="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:bg-blue-700 dark:hover:bg-blue-500 transition transform hover:-translate-y-1 hover:scale-105 duration-300"
+          >
+            Book an Appointment
+          </button>
+        </div>
+        <div class="md:w-1/2">
+          <img
+            alt="Illustration of a doctor consulting a patient in a modern clinic"
+            class="rounded-lg shadow-lg float"
+            height="400"
+            src="https://storage.googleapis.com/a1aa/image/53cf136b-d978-4fcd-4c3a-ae0d3145f80b.jpg"
+            width="600"
+          />
+        </div>
+      </section>
+
+      <section
+        class="max-w-7xl mx-auto px-6 py-16 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-lg mb-16"
+        id="about"
+      >
+        <h2
+          class="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-gray-100"
+        >
+          About ClinicCare
+        </h2>
+        <div class="grid md:grid-cols-3 gap-10 text-gray-700 dark:text-gray-300">
+          <div
+            class="space-y-4 p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-xl transition-shadow transform hover:-translate-y-2 duration-300"
+          >
+            <i class="fas fa-user-md text-blue-600 dark:text-blue-400 text-5xl"></i>
+            <h3 class="text-xl font-semibold">Expert Doctors</h3>
+            <p>
+              Our team consists of highly qualified and experienced medical
+              professionals dedicated to your care.
+            </p>
+          </div>
+          <div
+            class="space-y-4 p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-xl transition-shadow transform hover:-translate-y-2 duration-300"
+          >
+            <i class="fas fa-hospital text-blue-600 dark:text-blue-400 text-5xl"></i>
+            <h3 class="text-xl font-semibold">Modern Facilities</h3>
+            <p>
+              We use state-of-the-art equipment and technology to provide
+              accurate diagnosis and effective treatment.
+            </p>
+          </div>
+          <div
+            class="space-y-4 p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-xl transition-shadow transform hover:-translate-y-2 duration-300"
+          >
+            <i class="fas fa-heartbeat text-blue-600 dark:text-blue-400 text-5xl"></i>
+            <h3 class="text-xl font-semibold">Compassionate Care</h3>
+            <p>
+              We prioritize your comfort and well-being, offering personalized
+              care tailored to your needs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="max-w-3xl mx-auto px-6 py-16 rounded-lg shadow-lg bg-white dark:bg-gray-800"
+        id="contact"
+      >
+        <h2
+          class="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-gray-100"
+        >
+          Contact Us
+        </h2>
+        <form class="space-y-6" id="contactForm" novalidate>
+          <div>
+            <label
+              class="block mb-2 font-semibold text-gray-700 dark:text-gray-300"
+              for="name"
+              >Name</label
+            >
+            <input
+              class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100"
+              id="name"
+              name="name"
+              required
+              type="text"
+            />
+            <p class="text-red-600 text-sm mt-1 hidden" id="nameError">
+              Please enter your name.
+            </p>
+          </div>
+          <div>
+            <label
+              class="block mb-2 font-semibold text-gray-700 dark:text-gray-300"
+              for="email"
+              >Email</label
+            >
+            <input
+              class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100"
+              id="email"
+              name="email"
+              required
+              type="email"
+            />
+            <p class="text-red-600 text-sm mt-1 hidden" id="emailError">
+              Please enter a valid email.
+            </p>
+          </div>
+          <div>
+            <label
+              class="block mb-2 font-semibold text-gray-700 dark:text-gray-300"
+              for="message"
+              >Message</label
+            >
+            <textarea
+              class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100"
+              id="message"
+              name="message"
+              required
+              rows="5"
+            ></textarea>
+            <p class="text-red-600 text-sm mt-1 hidden" id="messageError">
+              Please enter your message.
+            </p>
+          </div>
+          <button
+            class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 dark:hover:bg-blue-500 transition transform hover:scale-105 duration-300"
+            type="submit"
+          >
+            Send Message
+          </button>
+          <p
+            class="text-green-600 font-semibold mt-4 hidden text-center"
+            id="formSuccess"
+          >
+            Thank you for contacting us! We will get back to you soon.
+          </p>
+        </form>
+      </section>
+    </section>
+
+    
+    <section
+      id="pageTable"
+      class="page"
+      aria-label="Data Table Page"
+      tabindex="-1"
+    >
+      <h2
+        class="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-gray-100"
+      >
+        Data Table
+      </h2>
+      <div class="overflow-x-auto max-w-full mb-6">
+        <table
+          class="border border-black border-collapse w-full table-fixed text-[13px] font-serif"
+        >
+          <thead>
+            <tr>
+              <th
+                class="border border-black w-[10%] text-center font-semibold p-1"
+              >
+                patient
+              </th>
+              <th
+                class="border border-black w-[20%] text-center font-semibold p-1"
+              >
+                Title
+              </th>
+              <th
+                class="border border-black w-[50%] text-center font-semibold p-1"
+              >
+                Body
+              </th>
+              <th
+                class="border border-black w-[20%] text-center font-semibold p-1"
+              >
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+
+      
+      <form
+        id="dataForm"
+        class="max-w-3xl mx-auto space-y-4 bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md"
+      >
+        <h3 class="text-xl font-semibold text-center mb-4" id="formTitle">
+          Add New Row
+        </h3>
+        <input type="hidden" id="rowIndex" />
+        <div>
+          <label
+            for="inputTitle"
+            class="block mb-1 font-semibold text-gray-700 dark:text-gray-300"
+            >Title</label
+          >
+          <input
+            type="text"
+            id="inputTitle"
+            class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100"
+            required
+          />
+        </div>
+        <div>
+          <label
+            for="inputBody"
+            class="block mb-1 font-semibold text-gray-700 dark:text-gray-300"
+            >Body</label
+          >
+          <textarea
+            id="inputBody"
+            rows="4"
+            class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100"
+            required
+          ></textarea>
+        </div>
+        <div class="flex justify-center space-x-4">
+          <button
+            type="submit"
+            class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 dark:hover:bg-blue-500 transition"
+            id="submitBtn"
+          >
+            Add
+          </button>
+          <button
+            type="button"
+            class="bg-gray-400 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-500 dark:hover:bg-gray-600 transition"
+            id="cancelBtn"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  
+  <div
+    id="loginModal"
+    class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden"
+    aria-modal="true"
+    role="dialog"
+    aria-labelledby="loginTitle"
+  >
+    <div
+      class="bg-white dark:bg-gray-800 rounded-lg shadow-lg max-w-md w-full p-8 relative transform transition-transform duration-300"
+    >
+      <button
+        id="closeLoginModal"
+        aria-label="Close Login Modal"
+        class="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white focus:outline-none text-2xl"
+      >
+        &times;
+      </button>
+      <h2
+        id="loginTitle"
+        class="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100 text-center"
+      >
+        Login to ClinicCare
+      </h2>
+      <form id="loginForm" class="space-y-6" novalidate>
+        <div>
+          <label
+            for="loginEmail"
+            class="block mb-2 font-semibold text-gray-700 dark:text-gray-300"
+            >Email</label
+          >
+          <input
+            type="email"
+            id="loginEmail"
+            name="loginEmail"
+            required
+            class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100"
+          />
+          <p class="text-red-600 text-sm mt-1 hidden" id="loginEmailError">
+            Please enter a valid email.
+          </p>
+        </div>
+        <div>
+          <label
+            for="loginPassword"
+            class="block mb-2 font-semibold text-gray-700 dark:text-gray-300"
+            >Password</label
+          >
+          <input
+            type="password"
+            id="loginPassword"
+            name="loginPassword"
+            required
+            minlength="6"
+            class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100"
+          />
+          <p class="text-red-600 text-sm mt-1 hidden" id="loginPasswordError">
+            Password must be at least 6 characters.
+          </p>
+        </div>
+        <button
+          type="submit"
+          class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 dark:hover:bg-blue-500 transition transform hover:scale-105 duration-300"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <footer
+    class="text-center py-6 text-gray-600 dark:text-gray-400 max-w-7xl mx-auto"
+  >
+    © 2025 ClinicCare. All rights reserved.
+  </footer>
+
+</body>
+<script src="./script.js"></script>
+</html>
