@@ -1,0 +1,19 @@
+    body {
+      font-family: "Poppins", sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    
+    .page {
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      inset: 0;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      transform: translateY(20px);
+    }
+    .page.active {
+      opacity: 1;
+      pointer-events: auto;
+      position: relative;
+      transform: translateY(0);
+    }
